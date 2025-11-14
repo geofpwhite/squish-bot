@@ -1,18 +1,30 @@
 defmodule SquishBot do
-  @moduledoc """
-  Documentation for `SquishBot`.
-  """
+  use Application
 
-  @doc """
-  Hello world.
+  def start(_type, _args) do
+    bot_options = %{
+      consumer: ExampleConsumer,
+      intents: [:direct_messages, :guild_messages, :message_content],
+      wrapped_token: fn -> System.fetch_env!("BOT_TOKEN") end
+    }
 
-  ## Examples
+    children = [{Nostrum.Bot, bot_options}]
+    Supervisor.start_link(children, strategy: :one_for_one)
+  end
+end
 
-      iex> SquishBot.hello()
-      :world
+defmodule consumer do
+  @behaviour Nostrum.Consumer
 
-  """
-  def hello do
-    :world
+  alias Nostrum.Api.Message
+
+  def handle_event({:MESSAGE_CREATE, msg, _ws_state}) do
+    case msg.content do
+      "ping!" ->
+        Message.create(msg.channel_id, "I copy and pasted this code")
+
+      _ ->
+        :ignore
+    end
   end
 end
