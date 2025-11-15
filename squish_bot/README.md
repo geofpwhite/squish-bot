@@ -1,6 +1,6 @@
 # SquishBot
 
-elixir project for me and jay to try and learn some elixir and make a discord bot
+**TODO: Add description**
 
 ## Installation
 

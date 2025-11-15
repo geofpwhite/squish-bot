@@ -1,24 +1,24 @@
 # The directory Mix will write compiled artifacts to.
-/_build/
+/squish_bot/_build/
 
 # If you run "mix test --cover", coverage assets end up here.
-/cover/
+/squish_bot/cover/
 
 # The directory Mix downloads your dependencies sources to.
-/deps/
+/squish_bot/deps/
 
 # Where third-party dependencies like ExDoc output generated docs.
-/doc/
+/squish_bot/doc/
 
 # Temporary files, for example, from tests.
-/tmp/
+/squish_bot/tmp/
 
 # If the VM crashes, it generates a dump, let's ignore it too.
-erl_crash.dump
+/squish_bot/erl_crash.dump
 
 # Also ignore archive artifacts (built via "mix archive.build").
-*.ez
+/squish_bot/*.ez
 
 # Ignore package tarball (built via "mix hex.build").
-squish_bot-*.tar
+/squish_bot/squish_bot-*.tar
 
