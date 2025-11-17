@@ -22,3 +22,4 @@
 # Ignore package tarball (built via "mix hex.build").
 /squish_bot/squish_bot-*.tar
 
+/squish_bot/config/
